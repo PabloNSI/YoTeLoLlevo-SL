@@ -5,6 +5,7 @@ from itertools import cycle
 from datos import coordenadas, zonas, colores
 import unicodedata
 
+# Función para normalizar el texto
 def normalizar_texto(texto):
     # Elimina tildes, convierte a minúsculas y elimina espacios innecesarios
     texto = ''.join(
@@ -42,6 +43,7 @@ def crear_grafo(coordenadas):
                     grafo.add_edge(nodo1, nodo2, weight=round(tiempo_estimado, 2))  # Redondear a 2 decimales
     return grafo
 
+# Funcion que calcula la ruta más corta
 def calcular_ruta_mas_corta(grafo, origen, destino):
     # Usamos Dijkstra para encontrar la ruta más corta
     try:
@@ -69,6 +71,7 @@ def asignar_colores(grafo):
 
     return color_nodos
 
+# Funcion para validar el destino
 def validar_destino(destino):
     destino_normalizado = normalizar_texto(destino)
     for nodo in coordenadas.keys():
@@ -93,6 +96,7 @@ G = crear_grafo(coordenadas)
 agregar_nodo_almacen(G, coordenadas)
 color_nodos = asignar_colores(G)
 
+# Función para dibujar el grafo
 def dibujar_grafo(grafo, color_nodos, ruta_seleccionada):
     pos = nx.get_node_attributes(grafo, 'pos')  # Obtener posiciones de los nodos
     edge_colors = [grafo[u][v].get('color', 'grey') for u, v in grafo.edges()]
@@ -109,7 +113,7 @@ def dibujar_grafo(grafo, color_nodos, ruta_seleccionada):
     for u, v, data in grafo.edges(data=True):
         if (u, v) in ruta_seleccionada or (v, u) in ruta_seleccionada:
             # Si la arista está en la ruta seleccionada, colorearla de negro y aumentar el grosor
-            nx.draw_networkx_edges(grafo, pos, edgelist=[(u, v)], width=3, edge_color='black')
+            nx.draw_networkx_edges(grafo, pos, edgelist=[(u, v)], width=5, edge_color='black')
         else:
             # Dibujar la arista con el color predeterminado
             nx.draw_networkx_edges(grafo, pos, edgelist=[(u, v)], width=1, edge_color=grafo[u][v].get('color', 'grey'))
@@ -156,6 +160,8 @@ calcular_distancia_desde_almacen()
 # Imprimir la ruta más corta y los nodos por los que pasa
 print("Ruta más corta desde el almacen a "+str(destino)+": "+str(ruta_seleccionada))
 print("Nodos por los que ha pasado la ruta:")
+
+# Imprimir los nodos por los que pasa la ruta
 for nodo in ruta_seleccionada:
     print("- "+str(nodo))
 
