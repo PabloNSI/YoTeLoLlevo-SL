@@ -56,6 +56,7 @@ zonas = {
     ]
 }
 
+# Colores
 colores = [
     "lightblue",
     "red",

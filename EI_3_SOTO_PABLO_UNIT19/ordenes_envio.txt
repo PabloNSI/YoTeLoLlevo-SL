@@ -1,0 +1,44 @@
+Alonso Cano : 0
+Argüelles : 0
+Atocha : 0
+Callao : 1
+Calle Arenal : 0
+Calle Mayor : 0
+Centro : 0
+Chamartín : 0
+Cibeles : 0
+Colombia : 0
+Concha Espina : 0
+Conde de Casal : 0
+Cuzco : 0
+Diego de León : 0
+Doctor Esquerdo : 0
+Duque de Pastrana : 0
+Gran Vía : 0
+Guzmán el Bueno : 0
+Ibiza : 0
+Iglesia : 0
+Islas Filipinas : 0
+Lista : 0
+Manuel Becerra : 0
+Moncloa : 1
+Neptuno : 0
+Núñez de Balboa : 0
+Pacífico : 0
+Plaza Mayor : 0
+Plaza de Castilla : 0
+Plaza de España : 0
+Plaza de Lima : 0
+Plaza de Oriente : 0
+Prado : 0
+Príncipe de Vergara : 0
+Puerta del Sol : 0
+Quevedo : 0
+Retiro : 0
+Ríos Rosas : 0
+Sainz de Baranda : 0
+Salamanca : 0
+San Bernardo : 0
+Santiago Bernabéu : 0
+Velázquez : 0
+Ópera : 0

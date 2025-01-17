@@ -40,15 +40,14 @@ def crear_grafo(coordenadas):
                 distancia = calcular_distancia(coordenadas[nodo1], coordenadas[nodo2])
                 if distancia <= 3:  # Conectar nodos cercanos (radio máximo de 3)
                     tiempo_estimado = distancia * 1.5 if nodo1 in ['Centro', 'Salamanca'] else distancia * 1.2
-                    grafo.add_edge(nodo1, nodo2, weight=round(tiempo_estimado, 2))  # Redondear a 2 decimales
+                    grafo.add_edge(nodo1, nodo2, weight=round(distancia * 1.2, 2))  # Redondear a 2 decimales
     return grafo
 
 # Funcion que calcula la ruta más corta
 def calcular_ruta_mas_corta(grafo, origen, destino):
     # Usamos Dijkstra para encontrar la ruta más corta
     try:
-        ruta = nx.dijkstra_path(grafo, source=origen, target=destino, weight='weight')
-        return ruta
+        return nx.dijkstra_path(grafo, source=origen, target=destino, weight='weight')
     except nx.NetworkXNoPath:
         print("No existe una ruta entre el origen y el destino.")
         return None
@@ -99,7 +98,7 @@ color_nodos = asignar_colores(G)
 # Función para dibujar el grafo
 def dibujar_grafo(grafo, color_nodos, ruta_seleccionada):
     pos = nx.get_node_attributes(grafo, 'pos')  # Obtener posiciones de los nodos
-    edge_colors = [grafo[u][v].get('color', 'grey') for u, v in grafo.edges()]
+    edge_colors = ['grey' for _ in grafo.edges()]
     labels = nx.get_edge_attributes(grafo, 'weight')  # Obtener etiquetas de las aristas
     labels = {k: round(v, 2) for k, v in labels.items()}  # Redondear distancias a 2 decimales
 
