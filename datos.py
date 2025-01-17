@@ -1,5 +1,3 @@
-# zonas.py
-
 # Coordenadas de los nodos
 coordenadas = {
     'Almacen': (20, 20),
