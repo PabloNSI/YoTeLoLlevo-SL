@@ -41,7 +41,7 @@ procesar_orden(destino)
 
 def guardar_orden(destino):
     # Leer el archivo para cargar los destinos y sus contadores
-    with open("ordenes_envio.txt", "r") as archivo:
+    with open("EI_3_SOTO_PABLO_UNIT19\\ordenes_envio.txt", "r") as archivo:
         lineas = archivo.readlines()
 
     # Crear un diccionario para almacenar los destinos y sus contadores
@@ -57,7 +57,7 @@ def guardar_orden(destino):
         destinos_dict[destino] = 1
 
     # Escribir de nuevo todos los destinos con los contadores actualizados
-    with open("ordenes_envio.txt", "w") as archivo:
+    with open("EI_3_SOTO_PABLO_UNIT19\\ordenes_envio.txt", "w") as archivo:
         for destino_nombre, contador in sorted(destinos_dict.items()):
             archivo.write(f"{destino_nombre} : {contador}\n")
 

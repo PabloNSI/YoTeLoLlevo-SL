@@ -145,17 +145,6 @@ while True:
 # Calcular la ruta más corta
 ruta_seleccionada = calcular_ruta_mas_corta(G, 'Almacen', nodo_destino)
 
-# Función para calcular distancia desde el Almacen a un destino
-def calcular_distancia_desde_almacen():
-    # Verificar si el destino existe en las coordenadas
-    if destino in coordenadas:
-        # Calcular la distancia desde el Almacen
-        distancia = calcular_distancia(coordenadas['Almacen'], coordenadas[destino])
-        # Redondear la distancia a 2 decimales
-        distancia = round(distancia, 2)
-
-# Llamar a la función para calcular la distancia
-calcular_distancia_desde_almacen()
 # Imprimir la ruta más corta y los nodos por los que pasa
 print("Ruta más corta desde el almacen a "+str(destino)+": "+str(ruta_seleccionada))
 print("Nodos por los que ha pasado la ruta:")
