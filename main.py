@@ -33,20 +33,23 @@ def procesar_orden(destino):
         tiempo_estimado_minutos, tiempo_estimado_segundos = tiempo_estimado
 
         print("Hemos generado una orden de entrega.")
-        print("\nTiempo estimado para ir desde el almacen a "+str(destino)+": "
-              + str(tiempo_estimado_minutos)+" minutos y "+str(tiempo_estimado_segundos)+" segundos.")
+        print("Tiempo estimado para ir desde el almacen a "+str(destino)+": "
+              + str(tiempo_estimado_minutos)+" minutos y "+str(tiempo_estimado_segundos)+" segundos.\n")
 
 # Llamar a la función para procesar la orden con el destino importado de planificacion_rutas.py
 procesar_orden(destino)
 
 def guardar_orden(destino):
     # Leer el archivo para cargar los destinos y sus contadores
-    with open("EI_3_SOTO_PABLO_UNIT19\\ordenes_envio.txt", "r") as archivo:
+    with open("ordenes_envio.txt", "r") as archivo:
         lineas = archivo.readlines()
 
     # Crear un diccionario para almacenar los destinos y sus contadores
     destinos_dict = {}
     for linea in lineas:
+        # Saltar líneas vacías o líneas con formato incorrecto
+        if " : " not in linea:
+            continue
         destino_nombre, contador = linea.strip().split(" : ")
         destinos_dict[destino_nombre] = int(contador)
 
@@ -57,9 +60,9 @@ def guardar_orden(destino):
         destinos_dict[destino] = 1
 
     # Escribir de nuevo todos los destinos con los contadores actualizados
-    with open("EI_3_SOTO_PABLO_UNIT19\\ordenes_envio.txt", "w") as archivo:
+    with open("ordenes_envio.txt", "w") as archivo:
         for destino_nombre, contador in sorted(destinos_dict.items()):
-            archivo.write(f"{destino_nombre} : {contador}\n")
+            archivo.write(str(destino_nombre)+" : "+str(contador)+"\n")
 
 # Llamamos a la función para guardar la orden
 guardar_orden(destino)
