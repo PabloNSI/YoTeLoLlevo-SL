@@ -1,10 +1,9 @@
 # Coordenadas de los nodos
 coordenadas = {
-    'Almacen': (20, 20),
     'Puerta del Sol': (10, 10), 'Plaza Mayor': (12, 11), 'Calle Arenal': (11, 9), 
     'Gran Vía': (15, 10), 'Plaza de España': (17, 9), 'Calle Mayor': (13, 12),
     'Plaza de Oriente': (14, 8), 'Ópera': (13, 9), 'Calle Preciados': (11, 11),
-    'Callao': (14, 11),
+    'Callao': (14, 11), 'Centro' : (12, 9),
 
     # Barrio Chamberí
     'Quevedo': (20, 15), 'Iglesia': (21, 14), 'Alonso Cano': (23, 14), 
@@ -56,12 +55,14 @@ zonas = {
 
 # Colores
 colores = [
-    "lightblue",
-    "red",
-    "yellow",
-    "saddlebrown",
-    "green",
-    "gray",
-    "orange",
     "darkblue",
+    "dodgerblue",
+    "lightskyblue",
+    "lightsteelblue",
+    "peachpuff",
+    "salmon",
+    "coral",
+    "orangered",
+    "darkorange",
+    "brown"
 ]

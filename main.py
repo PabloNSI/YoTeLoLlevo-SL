@@ -15,7 +15,7 @@ def calcular_tiempo_desde_destino(destino):
     distancia = calcular_distancia(coordenadas['Almacen'], coordenadas[destino])
     
     # Calcular el tiempo estimado (ajustado por distancia)
-    tiempo_estimado = distancia * 1.5  # Usamos el mismo factor de tiempo por distancia
+    tiempo_estimado = distancia * 1.5 if destino in ['Centro', 'Salamanca'] else distancia * 1.2
     
     # Convertir el tiempo estimado en minutos y segundos
     tiempo_estimado_minutos = int(tiempo_estimado)
